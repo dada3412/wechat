@@ -156,13 +156,9 @@ class WeChat
     }
 
     private function _doSubscribe($requestXml){
-        $text = "<xml><ToUserName>< ![%s] ]></ToUserName> <FromUserName>< ![CDATA[%s] ]></FromUserName> <CreateTime>%s</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[%s] ]></Content> </xml>";
+     //   $text = "<xml><ToUserName>< ![%s] ]></ToUserName> <FromUserName>< ![CDATA[%s] ]></FromUserName> <CreateTime>%s</CreateTime> <MsgType>< ![CDATA[text] ]></MsgType> <Content>< ![CDATA[%s] ]></Content> </xml>";
         $text = '<xml><ToUserName><![CDATA[%s]]></ToUserName><FromUserName><![CDATA[%s]]></FromUserName><CreateTime>%s</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[%s]]></Content></xml>';
-
         $content = "你说你是不是有病啊!";
-
-
-
         $time = time();
 
         $response = sprintf($text, $requestXml->FromUserName, $requestXml->ToUserName, $time, $content);
